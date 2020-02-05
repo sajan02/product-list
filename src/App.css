@@ -1,0 +1,88 @@
+.App {
+  text-align: center;
+}
+
+.app-container {
+  display: flex;
+}
+
+.login-container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 100vh;
+  background-size: cover;
+  background: url('https://cdn4.vectorstock.com/i/1000x1000/90/03/triangular-blue-background-cover-report-brochure-vector-8039003.jpg');
+}
+.profile-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #edf7f8;
+  height: 100vh;
+}
+
+.profile-detail > div {
+  color: #2b686e;
+}
+
+.profile-detail > img {
+  margin-bottom: 25px;
+}
+.left-container {
+  flex: 0.2
+}
+
+.right-container {
+  flex: 0.8;
+  border-left: 2px solid #327a81;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.create-btn {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 20px 20px 0px 20px;
+}
+
+.btn.btn-create{
+  color: #fff;
+  background-color: #327a81;
+  border-color: #327a81;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
