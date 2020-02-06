@@ -11,7 +11,7 @@ export function failure( error ) {
 }
 
 export function logout(callback) {
-    localStorage.removeItem('profileData' );
+    localStorage.removeItem('profileData');
     callback && callback();
 }
 

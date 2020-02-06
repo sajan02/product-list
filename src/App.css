@@ -29,6 +29,8 @@
 
 .profile-detail > img {
   margin-bottom: 25px;
+  height: 100px;
+  width: 100px;
 }
 .left-container {
   flex: 0.2

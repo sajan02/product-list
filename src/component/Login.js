@@ -3,6 +3,7 @@ import GoogleLogin from 'react-google-login';
 import * as Auth from '../utils/auth'; 
 
 export default class Login extends Component {
+
     render() {
         return (
             <div className='container login-container'>

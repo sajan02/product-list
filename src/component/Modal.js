@@ -23,7 +23,7 @@ export default class InputModal extends Component {
 
     componentDidMount() {
         this.setState({
-            data: this.props.data || {}
+            data: this.props.data || { product: 'Product 1'}
         })
     }
 
@@ -32,7 +32,7 @@ export default class InputModal extends Component {
         if (show) {
             if(JSON.stringify(data) !== JSON.stringify(this.state.data)) {
                 this.setState({
-                    data
+                    data: data || { product: 'Product 1'}
                 })
             }
         }
@@ -77,7 +77,18 @@ export default class InputModal extends Component {
                                   .join(' ')}
                             </Form.Label>
                             <Col sm={10}>
-                              <Form.Control name={datum} value={this.state.data?.[datum] || ''} onChange={this.handleInput} type={inputType[datum] || 'text'} />
+                              {
+                                  datum === 'product' ? 
+                                    <select id="product-selection"
+                                        value={this.state.data?.[datum] || ''}
+                                        name='product'
+                                        onChange={this.handleInput} className="form-control"
+                                    >
+                                      <option value='Product 1'>Product 1</option>
+                                      <option value='Product 2'>Product 2</option>
+                                      <option value='Product 3'>Product 3</option>
+                                    </select> :
+                                  <Form.Control name={datum} value={this.state.data?.[datum] || ''} onChange={this.handleInput} type={inputType[datum] || 'text'} />}
                             </Col>
                           </Form.Group>
                       </>
