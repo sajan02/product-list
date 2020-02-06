@@ -7,7 +7,7 @@ import { logout, getProfileData } from '../utils/auth'
 const data = require('../assets/DummyData.json');
 
 export default class Container extends Component {
-
+  
   state = {
     data : [],
     dataModel: [
@@ -22,7 +22,7 @@ export default class Container extends Component {
   }
 
   componentDidMount() {
-    this.setState({ data : data});
+    this.setState({ data : data.sort(() => Math.random() - 0.5)});
   }
 
   onEdit = (index) => {
@@ -42,10 +42,12 @@ export default class Container extends Component {
 
   onDelete = (index) => {
     let { data } = this.state;
+    const name = data[index];
     data.splice(index, 1);
     this.setState({
       data
-    })
+    });
+    setTimeout(_ => alert(`successfully deleted ${name.customer_name}!`), 500);
   }
 
   onHide = () => {
@@ -67,18 +69,15 @@ export default class Container extends Component {
       data,
       modalShow: false,
       selectedProductIndex: -1,
-    })
-  }
-
-  responseGoogle = (res) => {
-    console.log(res);
+    }, () => 
+      setTimeout(_ => alert(`Successfully ${type}ed ${newEntry.customer_name}`), 500)
+    );
   }
 
   render() {
     const { data, dataModel, selectedProductIndex, type } = this.state;
     const title = type === 'edit' ? 'Edit Order' : 'Create New Order';
     const profileData = JSON.parse(getProfileData());
-    console.log();
     return (
       <div className='app-container'>
         <div className='left-container'>
